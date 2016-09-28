@@ -88,6 +88,10 @@ function bindTouchHandler(element, i, supportsTouch, supportsIePointer) {
     }
   }
   function touchMove(e) {
+    // add functionality to temporarily disable scrolling on mobile
+    if(window.touchScrollDisabled)
+      return;
+
     if (!inLocalTouch && i.settings.swipePropagation) {
       touchStart(e);
     }
